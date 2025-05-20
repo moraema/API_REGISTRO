@@ -11,6 +11,11 @@ const PORT = process.env.PORT;
 app.use(cors({ origin: "*" }));
 app.use(express.json());
 
+app.get('/health', (req, res) => {
+  res.status(200).send('Registro OK');
+});
+
+
 app.use('/tareas', tareaRoutes);
 
 
