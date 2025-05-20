@@ -63,6 +63,8 @@ pipeline {
                         cd $REMOTE_PATH &&
                         git pull origin ${env.ACTUAL_BRANCH} &&
                         npm ci &&
+                        echo "📦 Instalando CORS..." &&
+                        npm install cors &&
                         pm2 restart ${pm2_name} || pm2 start index.js --name ${pm2_name}
                     '
                     """

@@ -12,7 +12,7 @@ app.use(cors({ origin: "*" }));
 app.use(express.json());
 
 app.get('/health', (req, res) => {
-  res.status(200).send('Registro OK, desde develop');
+  res.status(200).send('Registro OK, develop');
 });
 
 
